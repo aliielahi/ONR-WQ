@@ -1,0 +1,38 @@
+pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+pip install --no-deps "xformers<0.0.27" "trl<0.9.0" peft accelerate bitsandbytes
+pip install triton
+pip install trl bitsandbytes peft
+pip install xformers
+
+
+python llamaft.py TL chi chi,san None 0 1 ./res/chi.txt
+python llamaft.py TL san chi,san None 0 1 ./res/san.txt
+
+python llamaft.py TL NB CB,SB,NB None 0 1 ./res/nb.txt
+python llamaft.py TL SB CB,SB,NB None 0 1 ./res/sb.txt
+python llamaft.py TL CB CB,SB,NB None 0 1 ./res/cb.txt
+
+python llamaft.py DA NB CB CB 0 1 ./res/nbcb.txt
+python llamaft.py DA NB SB SB 0 1 ./res/nbsb.txt
+
+python llamaft.py DA SB CB CB 0 1 ./res/sbcb.txt
+python llamaft.py DA SB NB NB 0 1 ./res/sbnb.txt
+
+python llamaft.py DA CB NB NB 0 1 ./res/cbnb.txt
+python llamaft.py DA CB SB SB 0 1 ./res/cbsb.txt
+
+python llamaft.py DA NB NB CB 0 1 ./res/nbcb.txt
+python llamaft.py DA NB NB SB 0 1 ./res/nbsb.txt
+
+python llamaft.py DA SB SB CB 0 1 ./res/sbcb.txt
+python llamaft.py DA SB SB NB 0 1 ./res/sbnb.txt
+
+python llamaft.py DA CB CB NB 0 1 ./res/cbnb.txt
+python llamaft.py DA CB CB SB 0 1 ./res/cbsb.txt
+
+python llamaft.py TL chi chi,san None 0 1 ./res/chi.txt
+python llamaft.py TL san chi,san None 0 1 ./res/san.txt
+
+python llamaft.py DA chi chi,san san 0 1 ./res/chisan.txt
+python llamaft.py DA san chi,san chi 0 1 ./res/sanchi.txt
+
